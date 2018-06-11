@@ -36,6 +36,7 @@ for (var i = 0; i <= 111; i++) {
 var totalPromises = 0;
 var totalResolvedPromises = 0;
 
+
 function addPromise(appIdParam, pageNum){
 	console.error("** addPromise(): App:"+ appIdParam + ", pageNum: "+ pageNum);
 	console.log("** addPromise(): App:"+ appIdParam + ", pageNum: "+ pageNum);
@@ -70,8 +71,8 @@ function extractAppReviews(appList, appIndex, pageCounter, sleepTime) {
             extractAppReviews(appList, appIndex, pageCounter, 20000);
 
         } else if (appIndex < appList.length - 1){
-        	console.log("** Extracting next app: " + appList[appIndex + 1] + ", appIndex: " 
-        		+  (appIndex + 1));
+        	console.log("** Extracting next app: " + appList[appIndex + 1] + ", appIndex: " +  (appIndex + 1));
+        	console.error("** Extracting next app: " + appList[appIndex + 1] + ", appIndex: " +  (appIndex + 1));
             extractAppReviews(appList, appIndex + 1, 1, 60000);
         }
      }, sleepTime);
@@ -149,4 +150,4 @@ var appList = [
 "com.yelp.android",
 "com.gaiam.yogastudio"];
 
-extractAppReviews(appList, 0, 1);
+extractAppReviews(appList, 0, 1, 20000);
